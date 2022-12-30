@@ -5,15 +5,15 @@
 # Site
 title: 楽之空
 subtitle: ''
-description: ''
+description: '你好吖~'
 keywords:
 author: 七楽
-language: zh
+language: zh-CN
 timezone: ''
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: http://qilechan.github.io
+url: https://qilechan.github.io
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
@@ -51,7 +51,7 @@ highlight:
   wrap: true
   hljs: false
 prismjs:
-  enable: false
+  enable: true
   preprocess: true
   line_number: true
   tab_replace: ''
