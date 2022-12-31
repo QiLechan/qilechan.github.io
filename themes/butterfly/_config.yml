@@ -672,7 +672,7 @@ aside:
       link: https://github.com/QileChan
   card_announcement:
     enable: true
-    content: This is my Blog
+    content: 这里是我的博客
   card_recent_post:
     enable: true
     limit: 5 # if set 0 will show all
