@@ -40,7 +40,7 @@ copy:
 #   icon: link || the description
 social:
   fab fa-github: https://github.com/QiLechan || Github
-  fas fa-envelope: qilechan@outlook.com || Email
+  fas fa-envelope: mailto://qilechan@outlook.com || Email
 
 # search (搜索)
 # see https://butterfly.js.org/posts/ceeb73f/#搜索系統
