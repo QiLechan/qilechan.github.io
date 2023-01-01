@@ -1,9 +1,10 @@
 ---
 title: 可塑性记忆：续章（二）
 tags:
-- novel
+- 小说
 categories:
 - 小说
+top-img: https://blog.qileoffice.top/images/103430449_p0.png
 ---
 ## 第一章 愿你与有缘人再次相遇
 ### 1.
@@ -74,3 +75,4 @@ SAI 第一终端服务部门回收科工作室
 笑容有些僵住了。艾露的话，岂不是添油加醋而且什么乱七八糟的都讲了。
 “啊，艾拉，艾露的话，千万别深究。”
 “？”
+文章头图来自：https://www.pixiv.net/artworks/103430449
