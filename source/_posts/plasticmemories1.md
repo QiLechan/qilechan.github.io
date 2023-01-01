@@ -38,4 +38,4 @@ top_img: https://blog.qileoffice.top/images/102658004_p0.png
 序章 终
 2021年4月19日第二版
 2022年11月24日第三版
-文章头图来自：https://www.pixiv.net/artworks/102658004
+文章头图来自：https://www.pixiv.net/artworks/102658004 
