@@ -4,7 +4,7 @@ tags:
 - 小说
 categories:
 - 小说
-top-img: https://blog.qileoffice.top/images/103430449_p0.png
+top_img: https://blog.qileoffice.top/images/103430449_p0.png
 ---
 ## 第一章 愿你与有缘人再次相遇
 ### 1.
