@@ -1,38 +1,35 @@
 ---
-title: Hello World
+title: 可塑性记忆：续章（一）
 ---
-Welcome to [Hexo](https://hexo.io/)! This is your very first post. Check [documentation](https://hexo.io/docs/) for more info. If you get any problems when using Hexo, you can find the answer in [troubleshooting](https://hexo.io/docs/troubleshooting.html) or you can ask me on [GitHub](https://github.com/hexojs/hexo/issues).
-
-## Quick Start
-
-### Create a new post
-
-``` bash
-$ hexo new "My New Post"
-```
-
-More info: [Writing](https://hexo.io/docs/writing.html)
-
-### Run server
-
-``` bash
-$ hexo server
-```
-
-More info: [Server](https://hexo.io/docs/server.html)
-
-### Generate static files
-
-``` bash
-$ hexo generate
-```
-
-More info: [Generating](https://hexo.io/docs/generating.html)
-
-### Deploy to remote sites
-
-``` bash
-$ hexo deploy
-```
-
-More info: [Deployment](https://hexo.io/docs/one-command-deployment.html)
+## 序章
+东京都已是夜晚，我独自走进购物中心。刚刚从昏暗的街道过来，眼睛有些不太适应的样子，周围的灯光显得有些刺眼，令人，眼花缭乱，无法，抬起头来。
+新年就要来了，商场里面每一个人的脸上都洋溢着幸福的笑容。或许都在计划着不久后就要来到的假期如何度过呢。
+可我始终抬不起头来，我仿佛与周围的世界隔绝开来，好像我就不属于这个世界。
+是啊，世界怎么会如此残酷呢？
+穿过各式各样的门面，我快步走进电梯间，小小的空间让无处安放的心稍微平静了一些。
+电梯上行。
+正对着电梯的玻璃幕墙，玻璃上浅浅印着我的身影。
+我……又哭了？
+泪水终究还是从眼眶溢出，随后愈来愈多，我试着去阻止它们流下，却适得其反，止不住地流了下来。
+我，哭了。
+视线透过幕墙，远处的摩天轮正从高楼后面缓缓升起。
+闪闪发光，非常的美丽。
+但那对于我来说，却太过于耀眼。
+“我想知道，司为什么总能保持微笑。”
+细若游丝的声音在耳畔响起，环视四周，在因泪水而变得模糊的视野中，她正望着远处的摩天轮，背对着站在我的面前。
+想喊出她的名字，却无论如何发不出声，哏咽着，抽泣着，眼泪打湿了衣襟。
+她的身影缓缓转过身，披在身后的银色飘逸的长发轻轻摇摆着。她身后摩天轮上的灯光是那么耀眼，她仿佛正要被白光所吞没。
+泪水溢出眼眶，身影消失了。
+耳边似乎还回荡着她的身音。
+电梯上行。
+不过是幻觉罢了。
+刚抬起的手放了下来，无意中触碰到口袋中的什么东西。慢慢掏出，是两只小猫形状的钥匙吊环。
+如果自己的生命已经决定好了，我会如何接受呢？
+我对自己发出了疑问，不久以前，她也曾被这样的问题所折磨着。
+超重的感觉消失了，电梯停了下来。伴着悦耳的提示音，门缓缓打开了。
+我握紧了手中的吊环，抹去脸上的泪水，露出平常的笑容——她所喜欢的那种。
+我想要尽自己所能，过好这有限的时间。
+所有过往皆为序章，一切将来皆为可盼。
+序章 终
+2021年4月19日第二版
+2022年11月24日第三版
