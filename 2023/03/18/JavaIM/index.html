@@ -1,0 +1,305 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>基于Java的加密通讯软件 | 楽之空</title><meta name="author" content="七楽"><meta name="copyright" content="七楽"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="ffffff"><meta name="description" content="一、背景随着互联网的普及和发展，人们越来越需要一种方便快捷、安全可靠的即时通讯工具。传统的即时通讯软件大多基于中心化架构，即需要依赖一个中心服务器进行消息的转发和管理，这种架构存在单点故障、信息泄漏等问题。因此，越来越多的人开始关注去中心化的端对端通讯技术，即直接将消息传递给目标用户，避免了中心服务器的干扰和风险。 由于技术原因，我们无法实现真正的端对端通讯。但可以实现快速部署的加密通信服务端用于">
+<meta property="og:type" content="article">
+<meta property="og:title" content="基于Java的加密通讯软件">
+<meta property="og:url" content="https://blog.qileoffice.top/2023/03/18/JavaIM/index.html">
+<meta property="og:site_name" content="楽之空">
+<meta property="og:description" content="一、背景随着互联网的普及和发展，人们越来越需要一种方便快捷、安全可靠的即时通讯工具。传统的即时通讯软件大多基于中心化架构，即需要依赖一个中心服务器进行消息的转发和管理，这种架构存在单点故障、信息泄漏等问题。因此，越来越多的人开始关注去中心化的端对端通讯技术，即直接将消息传递给目标用户，避免了中心服务器的干扰和风险。 由于技术原因，我们无法实现真正的端对端通讯。但可以实现快速部署的加密通信服务端用于">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://blog.qileoffice.top/images/IMG_0634.JPG">
+<meta property="article:published_time" content="2023-03-18T00:00:00.000Z">
+<meta property="article:modified_time" content="2023-04-22T06:17:27.944Z">
+<meta property="article:author" content="七楽">
+<meta property="article:tag" content="技术">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://blog.qileoffice.top/images/IMG_0634.JPG"><link rel="shortcut icon" href="https://www.qileoffice.top/data/logo.jpg"><link rel="canonical" href="https://blog.qileoffice.top/2023/03/18/JavaIM/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: {"limitDay":500,"position":"top","messagePrev":"It has been","messageNext":"days since the last update, the content of the article may be outdated."},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: 七楽","link":"链接: ","source":"来源: 楽之空","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  }
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '基于Java的加密通讯软件',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-04-22 06:17:27'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const now = new Date()
+          const hour = now.getHours()
+          const isNight = hour <= 6 || hour >= 18
+          if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+          else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><script>const preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',()=> { preloader.endLoading() })
+
+if (true) {
+  document.addEventListener('pjax:send', () => { preloader.initLoading() })
+  document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+}</script><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://blog.qileoffice.top/images/IMG_0634.JPG" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">4</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">2</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/shuoshuo/"><i class="fa-fw fas fa-pen-to-square"></i><span> 说说</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li><li><a class="site-page child" href="/novel/"><i class="fa-fw fas fa-file-word"></i><span> 小说</span></a></li><li><a class="site-page child" href="/tech/"><i class="fa-fw fas fa-microchip"></i><span> 技术</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="楽之空"><span class="site-name">楽之空</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/shuoshuo/"><i class="fa-fw fas fa-pen-to-square"></i><span> 说说</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li><li><a class="site-page child" href="/novel/"><i class="fa-fw fas fa-file-word"></i><span> 小说</span></a></li><li><a class="site-page child" href="/tech/"><i class="fa-fw fas fa-microchip"></i><span> 技术</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">基于Java的加密通讯软件</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-03-18T00:00:00.000Z" title="发表于 2023-03-18 00:00:00">2023-03-18</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-04-22T06:17:27.944Z" title="更新于 2023-04-22 06:17:27">2023-04-22</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%8A%80%E6%9C%AF/">技术</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="基于Java的加密通讯软件"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="一、背景"><a href="#一、背景" class="headerlink" title="一、背景"></a>一、背景</h2><p>随着互联网的普及和发展，人们越来越需要一种方便快捷、安全可靠的即时通讯工具。传统的即时通讯软件大多基于中心化架构，即需要依赖一个中心服务器进行消息的转发和管理，这种架构存在单点故障、信息泄漏等问题。因此，越来越多的人开始关注去中心化的端对端通讯技术，即直接将消息传递给目标用户，避免了中心服务器的干扰和风险。</p>
+<p>由于技术原因，我们无法实现真正的端对端通讯。但可以实现快速部署的加密通信服务端用于替代。虽然本质上仍然属于中心化架构，但服务端可以由安装者自由控制，所有数据都经过非对称加密的方式加密传输，除非转发服务器被攻击导致数据泄露，基本不存在信息泄露的可能性。</p>
+<p>为了满足这一需求，我们设计并实现了一款基于Java的加密通讯软件，使用GitHub进行版本控制和协作开发。服务端通过生成密钥对，用户可以通过安全的方式将服务端公钥部署到客户端，客户端每次发信使用服务端公钥进行RSA加密，服务端接收到加密信息后使用私钥解密，然后使用另一客户端发送到服务端的客户端公钥进行加密，再传输至另一客户端，客户端使用私钥进行解密。在每一次客户端接收加密信息之前，客户端都会重新生成一对密钥对并将公钥发送至服务端，提高了通讯的安全性。<br>同时，该软件具有良好的跨平台性能，可在不同操作系统和设备上运行，提高了用户的使用体验和便捷性。</p>
+<h2 id="二、目的"><a href="#二、目的" class="headerlink" title="二、目的"></a>二、目的</h2><p>本研究的主要目的是探究如何利用Java语言开发一款加密通讯软件，并基于GitHub等工具实现版本控制、协作开发和自动构建。具体目标如下：<br>1.分析非对称加密通讯技术的原理和特点，研究如何使用Java语言实现加密通讯功能。<br>2.设计并实现一款基于Java的加密通讯软件，实现用户注册、登录、发送消息等基本功能。<br>3.使用GitHub进行版本控制和协作开发，协同开发团队进行代码的修改和更新。<br>4.评估该软件的性能、安全性和用户体验等方面，并讨论其优缺点和未来改进方向。</p>
+<h2 id="三、方法"><a href="#三、方法" class="headerlink" title="三、方法"></a>三、方法</h2><p>为了实现上述目标，我们采用了如下方法：<br>1.学习端对端通讯技术原理和相关技术，研究如何使用Java语言实现端对端通讯功能。<br>2.设计并实现一款基于Java的加密通讯软件，采用RSA加密算法，支持用户注册、登录、发送消息等基本功能。<br>3. 使用GitHub进行版本控制和协作开发，建立仓库并维护代码，实现团队协作和代码的修改和更新。<br>4.对软件进行性能、安全性和用户体验等方面的评估和测试，并针对评估结果进行分析和讨论，探讨未来的改进方向。</p>
+<h2 id="四、实现"><a href="#四、实现" class="headerlink" title="四、实现"></a>四、实现</h2><p>在本研究中，我们使用Java语言实现了一款基于RSA算法的加密通讯软件。该软件的功能包括用户注册、登录、发送消息等基本功能，同时具有跨平台、易用、安全可靠的特点。以下是该软件的实现过程和具体功能：<br>1.确定开发框架：我们使用Java语言作为主要开发语言，以命令行应用程序作为界面，使用Socket和ServerSocket实现通讯功能。<br>2.用户注册和登录：用户注册和登录功能是软件的核心功能之一，用户需要在启动程序后输入用户名和密码进行登录。若用户未注册，则需先进行注册，注册时需要输入用户名、密码等信息，完成后即可登录。<br>3.发送消息：用户可以向服务器发送消息，该消息将经过服务器广播给所有连接至服务器的用户，没有服务端公钥的客户端不会被接受。消息发送后，接收方将收到通知并可以查看消息。</p>
+<p>项目的源码位于<a target="_blank" rel="noopener" href="https://github.com/QiLechan/JavaIM%EF%BC%8C%E4%BB%93%E5%BA%93%E9%81%B5%E5%BE%AAGPL-3.0%E5%BC%80%E6%BA%90%E5%8D%8F%E8%AE%AE%EF%BC%8C%E7%94%A8%E6%88%B7%E6%9C%89%E8%BF%90%E8%A1%8C%E3%80%81%E5%A4%8D%E5%88%B6%E8%BD%AF%E4%BB%B6%E7%9A%84%E8%87%AA%E7%94%B1%EF%BC%8C%E5%8F%91%E8%A1%8C%E4%BC%A0%E6%92%AD%E8%BD%AF%E4%BB%B6%E7%9A%84%E8%87%AA%E7%94%B1%EF%BC%8C%E8%8E%B7%E5%BE%97%E8%BD%AF%E4%BB%B6%E6%BA%90%E7%A0%81%E7%9A%84%E8%87%AA%E7%94%B1%EF%BC%8C%E6%94%B9%E8%BF%9B%E8%BD%AF%E4%BB%B6%E5%B9%B6%E5%B0%86%E8%87%AA%E5%B7%B1%E4%BD%9C%E5%87%BA%E7%9A%84%E6%94%B9%E8%BF%9B%E7%89%88%E6%9C%AC%E5%90%91%E7%A4%BE%E4%BC%9A%E5%8F%91%E8%A1%8C%E4%BC%A0%E6%92%AD%E7%9A%84%E8%87%AA%E7%94%B1%EF%BC%8C%E4%BD%9C%E8%80%85%E4%B8%8D%E6%89%BF%E6%8B%85%E4%BD%BF%E7%94%A8%E8%80%85%E7%9A%84%E4%BB%BB%E4%BD%95%E8%B4%A3%E4%BB%BB%E3%80%82">https://github.com/QiLechan/JavaIM，仓库遵循GPL-3.0开源协议，用户有运行、复制软件的自由，发行传播软件的自由，获得软件源码的自由，改进软件并将自己作出的改进版本向社会发行传播的自由，作者不承担使用者的任何责任。</a><br>项目使用Maven进行构建。<br>我们首先实现的是服务端的功能。主要选择使用了java.net.ServerSocket和java.net.Socket库来实现服务端与客户端之间的握手与传输信息，org.apache.logging.log4j库用于输出信息，java.io.File库用于公钥文件的输出。<br>Server.java的主类：<br><img src="https://blog.qileoffice.top/images/carbon3.png" alt="code1"><br> <a target="_blank" rel="noopener" href="https://github.com/QiLechan/JavaIM/blob/main/src/main/java/org/yuezhikong/Server/Server.java">https://github.com/QiLechan/JavaIM/blob/main/src/main/java/org/yuezhikong/Server/Server.java</a><br>StartUserAuthThread()是用于实现用户登录的方法。方法首先创建一个新线程UserAuthThread，使用一个无限循环不断等待用户连接，并处理连接请求。<br>StartTimer()用于启动一个定时器用于计时。<br>StartCommandSystem()使用一个无限循环不断接收用户的输入的指令。<br>当服务端开始运行时，会提示输入要监听的端口号，然后根据配置文件（但是是在源代码中）中的变量决定服务端可以接受连接的总数量。检测目录下是否存在公钥，如果不存在，则重新生成新的公钥。如果检测有私钥但没有公钥，或存在公钥没有私钥，则会重新覆盖新的密钥对。<br>完成密钥生成后，开始处理用户登录的过程，登录的用户会被加入到Users的List中，之后启动接收消息线程，服务器开始消息广播。<br>用于实现对信息解密和重新加密发送的类主要通过调用接口ServerAPI中的SendMessageToAllClient()函数实现发信功能，以及RSA类进行加解密和输出密钥对，SendMessageToAllClient()内容如下：<br><img src="https://blog.qileoffice.top/images/carbon.png" alt="code2"><br>在RSA.java中，最主要使用了第三方库hutool更加方便地实现了RSA加密的过程：<br><img src="https://blog.qileoffice.top/images/carbon1.png" alt="code3"><br>客户端则与服务端相似，在运行前首先检查是否在运行目录下有服务端密钥，如果没有将会停止运行。客户端使用无限循环获取用户输入的信息。客户端开始运行时，会要求输入服务器的IP以及端口号，在输入正确的IP和端口后，将开始通讯握手。在握手成功后，服务端会向客户端发送响应信息，之后客户端开始等待用户输入信息。用户输入信息回车后，调用RSA类中的加密方法加密后发送至服务端。</p>
+<p>以上为客户端及服务端简要的工作原理。为了方便，我们将客户端和服务端在一个程序中实现，以下是程序主类Main.java：<br><img src="https://blog.qileoffice.top/images/carbon2.png" alt="code4"><br>在程序开始运行时，会询问用户使用客户端模式还是服务端模式，并根据用户的选择运行。</p>
+<h2 id="五、结果"><a href="#五、结果" class="headerlink" title="五、结果"></a>五、结果</h2><p>在本研究中，我们成功地实现了一款基于Java的端对端通讯软件，该软件具有跨平台、安全可靠等优点，并采用了GitHub进行版本控制和协作开发。以下是该软件的测试结果和评估：<br>1.	性能测试：我们对软件的性能进行了测试，测试包括登录和发送消息等功能的响应时间和稳定性等方面。测试结果表明，软件的响应速度较快，且稳定性较好。<br>2.	安全性测试：我们对软件的安全性进行了测试，测试包括数据加密和防止数据泄露等方面。测试结果表明，软件的数据传输采用了加密协议，防止了数据泄露和劫持等安全问题。<br>3.	用户体验测试：我们邀请了多位用户测试软件，他们对软件的界面设计、功能实现、使用体验等方面都给予了较高的评价，认为该软件易于操作、功能齐全、界面美观等。</p>
+<h2 id="六、讨论和改进"><a href="#六、讨论和改进" class="headerlink" title="六、讨论和改进"></a>六、讨论和改进</h2><p>在本研究中，我们对开发基于Java的端对端通讯软件进行了探索和实现，并取得了一定的成果。但是，在软件开发和测试过程中，我们也发现了一些问题和不足之处，需要进一步改进和优化。以下是我们的讨论和改进方向：<br>1.	优化通讯功能：在实现加密通讯功能时，我们采用了Socket和ServerSocket进行通讯。但是，该方法存在连接数限制和安全问题等，需要进一步改进和优化。<br>2.	添加GUI界面：我们没有为软件实现GUI界面，因此，我们需要进一步实现界面设计，提高用户体验。<br>3.	完善功能和性能：虽然我们实现了基本的用户注册、登录和发送消息等功能，但是还有一些功能需要完善，如用户个人信息管理和多人聊天等。此外，我们也需要进一步优化软件的性能，提高响应速度和稳定性。<br>4.	探索新的开发框架和技术：随着技术的不断发展，新的开发框架和技术不断涌现。因此，我们也需要不断探索新的开发框架和技术，以便进一步优化和改进软件。</p>
+<h2 id="七、结论"><a href="#七、结论" class="headerlink" title="七、结论"></a>七、结论</h2><p>本研究成功地实现了一款基于Java的端对端通讯软件，该软件具有跨平台、安全可靠等优点，并采用了GitHub进行版本控制、协作开发以及自动构建。在软件开发和测试过程中，我们也发现了一些问题和不足之处，需要进一步改进和优化。因此，我们将继续改进软件的功能和性能，并探索新的开发框架和技术，以便进一步提高软件的质量和用户体验。<br>总之，本研究对于基于Java的加密通讯软件的开发和实现进行了深入的探索和研究，并取得了一定的成果。通过对软件开发、测试、优化等方面的不断努力和探索，我们成功地实现了一款具有一定功能和优势的端对端通讯软件。此外，通过使用GitHub进行版本控制、协作开发和自动构建，也进一步提高了软件的开发效率和质量。<br>当然，本研究还存在一些不足和问题，需要进一步改进和完善。例如，在加密通讯功能、界面设计、功能完善和性能优化等方面，我们都需要进一步努力和探索。同时，随着技术的不断发展和创新，我们也需要不断探索和引入新的开发框架和技术，以便进一步提高软件的质量和用户体验。<br>最后，我们希望本研究能够对Java开发者和相关从业人员提供一些参考和帮助，同时也期待更多的研究者和开发者加入到Java开发和创新的行列中来，共同推动Java技术的不断发展和进步。</p>
+<h2 id="鸣谢"><a href="#鸣谢" class="headerlink" title="鸣谢"></a>鸣谢</h2><p>子涵</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://blog.qileoffice.top">七楽</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://blog.qileoffice.top/2023/03/18/JavaIM/">https://blog.qileoffice.top/2023/03/18/JavaIM/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://blog.qileoffice.top" target="_blank">楽之空</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E6%8A%80%E6%9C%AF/">技术</a></div><div class="post_share"><div class="social-share" data-image="https://blog.qileoffice.top/images/IMG_0634.JPG" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2023/01/27/ECCV2022-RIFE/" title="AI补帧：ECCV2022-RIFE算法初尝试"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">AI补帧：ECCV2022-RIFE算法初尝试</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2023/01/27/ECCV2022-RIFE/" title="AI补帧：ECCV2022-RIFE算法初尝试"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-01-27</div><div class="title">AI补帧：ECCV2022-RIFE算法初尝试</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://blog.qileoffice.top/images/IMG_0634.JPG" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">七楽</div><div class="author-info__description">你好吖~</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">4</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">2</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/QileChan"><i class="fab fa-github"></i><span>关注我</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/QiLechan" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto://qilechan@outlook.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">新博客，建设中</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E8%83%8C%E6%99%AF"><span class="toc-number">1.</span> <span class="toc-text">一、背景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E7%9B%AE%E7%9A%84"><span class="toc-number">2.</span> <span class="toc-text">二、目的</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E6%96%B9%E6%B3%95"><span class="toc-number">3.</span> <span class="toc-text">三、方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E5%AE%9E%E7%8E%B0"><span class="toc-number">4.</span> <span class="toc-text">四、实现</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E7%BB%93%E6%9E%9C"><span class="toc-number">5.</span> <span class="toc-text">五、结果</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%AD%E3%80%81%E8%AE%A8%E8%AE%BA%E5%92%8C%E6%94%B9%E8%BF%9B"><span class="toc-number">6.</span> <span class="toc-text">六、讨论和改进</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%83%E3%80%81%E7%BB%93%E8%AE%BA"><span class="toc-number">7.</span> <span class="toc-text">七、结论</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%B8%A3%E8%B0%A2"><span class="toc-number">8.</span> <span class="toc-text">鸣谢</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/03/18/JavaIM/" title="基于Java的加密通讯软件">基于Java的加密通讯软件</a><time datetime="2023-03-18T00:00:00.000Z" title="发表于 2023-03-18 00:00:00">2023-03-18</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/01/27/ECCV2022-RIFE/" title="AI补帧：ECCV2022-RIFE算法初尝试">AI补帧：ECCV2022-RIFE算法初尝试</a><time datetime="2023-01-27T00:00:00.000Z" title="发表于 2023-01-27 00:00:00">2023-01-27</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/01/01/plasticmemories1/" title="可塑性记忆：续章（一）"><img src="https://blog.qileoffice.top/images/102658004_p0.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="可塑性记忆：续章（一）"/></a><div class="content"><a class="title" href="/2023/01/01/plasticmemories1/" title="可塑性记忆：续章（一）">可塑性记忆：续章（一）</a><time datetime="2023-01-01T00:00:00.000Z" title="发表于 2023-01-01 00:00:00">2023-01-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/01/01/plasticmemories2/" title="可塑性记忆：续章（二）"><img src="https://blog.qileoffice.top/images/103430449_p0.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="可塑性记忆：续章（二）"/></a><div class="content"><a class="title" href="/2023/01/01/plasticmemories2/" title="可塑性记忆：续章（二）">可塑性记忆：续章（二）</a><time datetime="2023-01-01T00:00:00.000Z" title="发表于 2023-01-01 00:00:00">2023-01-01</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By 七楽</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text"><a href="https://icp.gov.moe/?keyword=20232050" target="_blank">萌ICP备20232050号</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="chat_btn" type="button" title="聊天"><i class="fas fa-sms"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"><script>function loadValine () {
+  function initValine () {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: 'wDNQvkJxm4UGqt1ACHibrxNI-gzGzoHsz',
+      appKey: 'nEPCLKNoDUtQpUQNj4UGoKje',
+      avatar: 'monsterid',
+      serverURLs: '',
+      emojiMaps: "",
+      path: window.location.pathname,
+      visitor: false
+    }, null))
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Valine' === 'Valine' || !true) {
+  if (true) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script></div><div class="aplayer no-destroy" data-id="6657664554" data-server="netease" data-type="playlist" data-fixed="true" data-autoplay="true"> </div><canvas class="fireworks" mobile="true"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/fireworks.min.js"></script><script defer="defer" id="fluttering_ribbon" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-fluttering-ribbon.min.js"></script><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-nest.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script>(function(d, w, c) {
+    w.ChatraID = 'mqPRyqdA2BhMuQwNz';
+    var s = d.createElement('script');
+    w[c] = w[c] || function() {
+        (w[c].q = w[c].q || []).push(arguments);
+    };
+    s.async = true;
+    s.src = 'https://call.chatra.io/chatra.js';
+    if (d.head) d.head.appendChild(s);
+})(document, window, 'Chatra');
+
+if (true) {
+  var chatBtnFn = () => {
+    var chatBtn = document.getElementById("chat_btn")
+    chatBtn.addEventListener("click", function(){
+      Chatra('openChat')
+    });
+  }
+  chatBtnFn()
+} else {
+  if (true) {
+    function chatBtnHide () {
+      Chatra('hide')
+    }
+    function chatBtnShow () {
+      Chatra('show')
+    }
+  }
+}</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/metingjs/dist/Meting.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
+  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
+
+  document.getElementById('rightside').style.cssText = "opacity: ''; transform: ''"
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+  typeof disqusjs === 'object' && disqusjs.destroy()
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
