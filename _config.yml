@@ -99,6 +99,22 @@ ignore:
 ## Themes: https://hexo.io/themes/
 theme: butterfly
 
+# Artitalk
+# see https://artitalk.js.org/
+artitalk:
+  enable: true
+  appId: wDNQvkJxm4UGqt1ACHibrxNI-gzGzoHsz
+  appKey: nEPCLKNoDUtQpUQNj4UGoKje
+  path: shuoshuo
+  js: https://cdn.jsdelivr.net/npm/artitalk
+  option:
+    serverURL: https://wdnqvkjx.lc-cn-n1-shared.com
+  front_matter:
+
+aplayer:
+  meting: true
+  asset_inject: false
+
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:

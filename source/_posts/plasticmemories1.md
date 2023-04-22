@@ -4,7 +4,10 @@ tags:
 - 小说
 categories:
 - 小说
+date: 2023-01-01
 top_img: https://blog.qileoffice.top/images/102658004_p0.png
+cover: https://blog.qileoffice.top/images/102658004_p0.png
+excerpt: 可塑性记忆-续章：序章
 ---
 ## 序章
 东京都已是夜晚，我独自走进购物中心。刚刚从昏暗的街道过来，眼睛有些不太适应的样子，周围的灯光显得有些刺眼，令人，眼花缭乱，无法，抬起头来。

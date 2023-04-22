@@ -7,10 +7,12 @@ menu:
   时间轴: /archives/ || fas fa-archive
   标签: /tags/ || fas fa-tags
   分类: /categories/ || fas fa-folder-open
+  说说: /shuoshuo/ || fas fa-pen-to-square
   清单||fas fa-list:
     音乐: /music/ || fas fa-music
     电影: /movies/ || fas fa-video
     小说: /novel/ || fas fa-file-word
+    技术: /tech/ || fas fa-microchip
   友链: /link/ || fas fa-link
   关于: /about/ || fas fa-heart
 
@@ -29,7 +31,7 @@ highlight_height_limit: false # unit: px
 code_word_wrap: false
 
 # copy settings
-copyright: Copyright © 2021-2022 楽之空
+copyright: Copyright © 2021-2023 楽之空
 copy:
   enable: true
   copyright:
@@ -85,14 +87,14 @@ favicon: https://www.qileoffice.top/data/logo.jpg
 
 # Avatar (頭像)
 avatar:
-  img: https://qilechan.github.io/images/IMG_0634.JPG
+  img: https://blog.qileoffice.top/images/IMG_0634.JPG
   effect: false
 
 # Disable all banner image
 disable_top_img: false
 
 # The banner image of home page
-index_img: https://qilechan.github.io/images/IMG_0886.JPG
+index_img: https://blog.qileoffice.top/images/IMG_0886.JPG
 
 # If the banner of page not setting, it will show the top_img
 default_top_img:
@@ -236,7 +238,7 @@ post_pagination: 1
 
 # Displays outdated notice for a post (文章過期提醒)
 noticeOutdate:
-  enable: false
+  enable: true
   style: flat # style: simple/flat
   limit_day: 500 # When will it be shown
   position: top # position: top/bottom
@@ -270,11 +272,11 @@ addtoany:
 comments:
   # Up to two comments system, the first will be shown as default
   # Choose: Disqus/Disqusjs/Livere/Gitalk/Valine/Waline/Utterances/Facebook Comments/Twikoo/Giscus/Remark42/Artalk
-  use: # Valine,Disqus
+  use: Valine
   text: true # Display the comment name next to the button
   # lazyload: The comment system will be load when comment element enters the browser's viewport.
   # If you set it to true, the comment count will be invalid
-  lazyload: false
+  lazyload: true
   count: false # Display comment count in post's top_img
   card_post_count: false # Display comment count in Home Page
 
@@ -310,8 +312,8 @@ gitalk:
 # valine
 # https://valine.js.org
 valine:
-  appId: # leancloud application app id
-  appKey: # leancloud application app key
+  appId: wDNQvkJxm4UGqt1ACHibrxNI-gzGzoHsz
+  appKey: nEPCLKNoDUtQpUQNj4UGoKje
   avatar: monsterid # gravatar style https://valine.js.org/#/avatar
   serverURLs: # This configuration is suitable for domestic custom domain name users, overseas version will be automatically detected (no need to manually fill in)
   bg: # valine background
@@ -384,16 +386,16 @@ artalk:
 
 # Chat Button [recommend]
 # It will create a button in the bottom right corner of website, and hide the origin button
-chat_btn: false
+chat_btn: true
 
 # The origin chat button is displayed when scrolling up, and the button is hidden when scrolling down
-chat_hide_show: false
+chat_hide_show: true
 
 # chatra
 # https://chatra.io/
 chatra:
-  enable: false
-  id:
+  enable: true
+  id: mqPRyqdA2BhMuQwNz
 
 # tidio
 # https://www.tidio.com/
@@ -432,7 +434,7 @@ footer:
   owner:
     enable: true
     since: 2020
-  custom_text:
+  custom_text: <a href="https://icp.gov.moe/?keyword=20232050" target="_blank">萌ICP备20232050号</a>
   copyright: true # Copyright of theme and framework
 
 # Analysis
@@ -571,7 +573,7 @@ activate_power_mode:
 fireworks:
   enable: true
   zIndex: 9999 # -1 or 9999
-  mobile: false
+  mobile: true
 
 # Mouse click effects: Heart symbol (鼠標點擊效果: 愛心)
 click_heart:
@@ -753,7 +755,7 @@ darkmode:
   # autoChangeMode: 1  Following System Settings, if the system doesn't support dark mode, it will switch dark mode between 6 pm to 6 am
   # autoChangeMode: 2  Switch dark mode between 6 pm to 6 am
   # autoChangeMode: false
-  autoChangeMode: false
+  autoChangeMode: 2
 
 # show scroll percent in scroll-to-top button
 rightside_scroll_percent: false
@@ -811,14 +813,14 @@ note:
 # It may contain bugs and unstable, give feedback when you find the bugs.
 # https://github.com/MoOx/pjax
 pjax:
-  enable: false
+  enable: true
   exclude:
     # - xxxx
     # - xxxx
 
 # Inject the css and script (aplayer/meting)
 aplayerInject:
-  enable: false
+  enable: true
   per_page: true
 
 # Snackbar (Toast Notification 彈窗)
@@ -883,7 +885,8 @@ inject:
   head:
     # - <link rel="stylesheet" href="/xxx.css">
   bottom:
-    # - <script src="xxxx"></script>
+    - <div class="aplayer no-destroy" data-id="6657664554" data-server="netease" data-type="playlist" data-fixed="true" data-autoplay="true"> </div>
+
 
 # CDN
 # Don't modify the following settings unless you know how they work
