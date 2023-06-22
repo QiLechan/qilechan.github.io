@@ -5,8 +5,8 @@ tags:
 categories:
 - 小说
 date: 2023-01-01
-top_img: https://blog.qileoffice.top/images/103430449_p0.png
-cover: https://blog.qileoffice.top/images/103430449_p0.png
+top_img: https://qilechan.dimaurora.com/images/103430449_p0.png
+cover: https://qilechan.dimaurora.com/images/103430449_p0.png
 excerpt: 可塑性记忆-续章：第一章 愿你与有缘人再次相遇（一）
 ---
 ## 第一章 愿你与有缘人再次相遇
