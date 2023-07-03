@@ -21,6 +21,6 @@ date: 2023-07-03
 情绪无常，虽然在别人眼里看起来很乐观，很开得起玩笑，很宽容。但我其实尤其敏感和脆弱，我是那种会在好好的聊天中突然翻脸的那种人。可能有人会觉得我矫情，既然这样那我们最好不要再聊。我过于较真，有些和我聊崩的人可能都不知道为什么，但对于我，你们的每句话或者每一刻的态度我都会反复考量，有时候想太多就变味了。
 
 ## 社交媒体
-![https://qilechan.dimaurora.com/images/twitter.png](https://twitter.com/Nanarakuchan)[Twitter](https://twitter.com/Nanarakuchan)
+<img src="https://qilechan.dimaurora.com/images/twitter.png" width="2%" height="2%">[Twitter](https://twitter.com/Nanarakuchan)
 
-![https://qilechan.dimaurora.com/images/facebook.png](https://www.facebook.com/profile.php?id=100092178776674&mibextid=ZbWKwL)[Facebook](https://www.facebook.com/profile.php?id=100092178776674&mibextid=ZbWKwL)
+<img src="https://qilechan.dimaurora.com/images/facebook.png" width="2%" height="2%">[Facebook](https://www.facebook.com/profile.php?id=100092178776674&mibextid=ZbWKwL)
