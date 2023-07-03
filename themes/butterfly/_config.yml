@@ -531,7 +531,7 @@ footer_bg: false
 rightside-bottom:
 
 # Enter transitions (開啓網頁進入效果)
-enter_transitions: true
+enter_transitions: false
 
 # Background effects (背景特效)
 # --------------------------------------
@@ -672,7 +672,7 @@ aside:
     button:
       enable: true
       icon: fab fa-github
-      text: 关注我
+      text: 凡是过往皆为序章，所有将来皆为可盼。
       link: https://github.com/QileChan
   card_announcement:
     enable: true
@@ -715,8 +715,8 @@ busuanzi:
 # Time difference between publish date and now (網頁運行時間)
 # Formal: Month/Day/Year Time or Year/Month/Day Time
 runtimeshow:
-  enable: false
-  publish_date:
+  enable: true
+  publish_date:2023-01-01
 
 # Aside widget - Newest Comments
 newest_comments:
@@ -731,9 +731,9 @@ newest_comments:
 
 # Conversion between Traditional and Simplified Chinese (簡繁轉換)
 translate:
-  enable: false
+  enable: true
   # The text of a button
-  default: 繁
+  default: 2
   # the language of website (1 - Traditional Chinese/ 2 - Simplified Chinese）
   defaultEncoding: 2
   # Time delay
