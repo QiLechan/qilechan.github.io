@@ -94,7 +94,7 @@ avatar:
 disable_top_img: false
 
 # The banner image of home page
-index_img: https://qilechan.dimaurora.com/images/IMG_0886.JPG
+index_img: https://qilechan.dimaurora.com/images/background.webp
 
 # If the banner of page not setting, it will show the top_img
 default_top_img:
@@ -887,6 +887,7 @@ inject:
     # - <link rel="stylesheet" href="/xxx.css">
   bottom:
     - <div class="aplayer no-destroy" data-id="6657664554" data-server="netease" data-type="playlist" data-fixed="true" data-autoplay="true"> </div>
+    - <a rel="me" href="https://mastodon.social/@qilechan">Mastodon</a>
 
 
 # CDN
