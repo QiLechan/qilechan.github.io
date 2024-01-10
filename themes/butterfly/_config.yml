@@ -87,14 +87,14 @@ favicon: https://www.qileoffice.top/data/logo.jpg
 
 # Avatar (頭像)
 avatar:
-  img: https://qilechan.dimaurora.com/images/IMG_0634.JPG
+  img: https://blog.nanaraku.cn/images/IMG_0634.JPG
   effect: false
 
 # Disable all banner image
 disable_top_img: false
 
 # The banner image of home page
-index_img: https://qilechan.dimaurora.com/images/background.webp
+index_img: https://blog.nanaraku.cn/images/background.webp
 
 # If the banner of page not setting, it will show the top_img
 default_top_img:
